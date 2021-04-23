@@ -2,6 +2,7 @@
 
 HBPreferences *preferences;
 bool enabled;
+NSString *appName;
 
 %hook SKPaymentTransaction
 - (long long) transactionState {
@@ -29,24 +30,6 @@ bool enabled;
 }
 %end
 
-%hook SKPaymentQueueClient
-- (BOOL) ignoresInAppPurchaseRestriction {
-    return 1; // canmakepayments but for subscriptions
-}
-
-- (BOOL) requiresAuthenticationForPayment {
-    return 0; // attempt to bypass apple's subscription server
-}
-
-- (void) setIgnoresInAppPurchaseRestriction: (BOOL) arg1 {
-    %orig(1); // iOS 14
-}
-
-- (void) setRequiresAuthenticationForPayment: (BOOL) arg1 {
-    %orig(0); // iOS 14
-}
-%end
-
 %hook SSPurchaseReceipt
 - (BOOL) isValid {
     return 1; // receipt is valid
@@ -61,8 +44,12 @@ bool enabled;
 }
 %end
 
+static BOOL disabledInApp (NSString *appName) {
+    return [[NSDictionary dictionaryWithContentsOfFile: @"/var/mobile/Library/Preferences/ai.paisseon.satella.plist"] valueForKey: appName]; // see if satella is disabled in this app
+}
+
 %ctor { // prefs stuff
-    preferences = [[HBPreferences alloc] initWithIdentifier:@"ai.paisseon.satella14"];
+    preferences = [[HBPreferences alloc] initWithIdentifier:@"ai.paisseon.satella"];
 
     [preferences registerDefaults:@{
         @"Enabled": @YES,
@@ -70,5 +57,7 @@ bool enabled;
 
     [preferences registerBool:&enabled default:YES forKey:@"Enabled"];
 
-    if (enabled) %init;
+    appName = [[NSBundle mainBundle] bundleIdentifier];
+
+    if (enabled && !disabledInApp(appName)) %init;
 }
