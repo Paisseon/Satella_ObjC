@@ -6,7 +6,7 @@ INSTALL_TARGET_PROCESSES = SpringBoard
 TWEAK_NAME = Satella
 Satella_FILES = Satella.x
 Satella_CFLAGS = -fobjc-arc
-Satella_EXTRA_FRAMEWORKS = Cephei
+Satella_EXTRA_FRAMEWORKS = AltList
 
 SUBPROJECTS += Prefs
 

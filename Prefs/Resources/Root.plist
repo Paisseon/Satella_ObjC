@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>darkHeaderColor</key>
+	<string>#ffffff</string>
+	<key>darkTextColor</key>
+	<string>#000000</string>
+	<key>headerColor</key>
+	<string>#000000</string>
+	<key>headerFontPath</key>
+	<string>/Library/Application Support/Pokebox/silkscreen.ttf</string>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>PostNotification</key>
+			<string>ai.paisseon.satella.prefschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>ai.paisseon.satella</string>
+			<key>key</key>
+			<string>enabled</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>ai.paisseon.satella.prefschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>ai.paisseon.satella</string>
+			<key>key</key>
+			<string>fakeReceipt</string>
+			<key>label</key>
+			<string>Fake Receipt 🧪</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>ai.paisseon.satella.prefschanged</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>defaultApplicationSwitchValue</key>
+			<false/>
+			<key>defaults</key>
+			<string>ai.paisseon.satella</string>
+			<key>detail</key>
+			<string>ATLApplicationListMultiSelectionController</string>
+			<key>includeIdentifiersInSearch</key>
+			<true/>
+			<key>key</key>
+			<string>apps</string>
+			<key>label</key>
+			<string>Enable in Apps</string>
+			<key>sections</key>
+			<array>
+				<dict>
+					<key>sectionType</key>
+					<string>User</string>
+				</dict>
+			</array>
+			<key>showIdentifiersAsSubtitle</key>
+			<true/>
+			<key>useSearchBar</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>respring</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Apply Changes</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>
+Do you know wherein lies the sin?
+It wasn't in the partaking of the fruit of the tree.
+
+Do you know wherein lies the sin?
+It wasn't in lending an ear to the serpent's enticements.
+
+Do you still not know wherein lies the sin?
+Therein lies your sin.</string>
+		</dict>
+		<dict>
+			<key>cellClass</key>
+			<string>SPCreditCell</string>
+			<key>github</key>
+			<string>satella</string>
+			<key>label</key>
+			<string>Source Code</string>
+			<key>subtitle</key>
+			<string>View on GitHub</string>
+		</dict>
+	</array>
+	<key>name</key>
+	<string>Satella</string>
+	<key>subtitle</key>
+	<string>A modern IAP hacker</string>
+	<key>textColor</key>
+	<string>#ffffff</string>
+</dict>
+</plist>

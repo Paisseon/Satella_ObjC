@@ -1,8 +1,10 @@
 Package: ai.paisseon.satella
 Name: Satella
-Depends: org.coolstar.libhooker
-Version: 2.0
-Architecture: iphoneos-arm
-Description: Aishite.
-Maintainer: paisseon
 Author: paisseon
+Description: Aishiteru
+Maintainer: paisseon
+Version: 3.2
+Depends: firmware (>= 13.0), mobilesubstrate, preferenceloader, com.opa334.altlist
+Architecture: iphoneos-arm
+Icon: https://i.imgur.com/HHOvZoD.png
+SileoDepiction: https://paisseon.github.io/depictions/satella.json
