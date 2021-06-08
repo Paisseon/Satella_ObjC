@@ -1,5 +1,4 @@
 #import "SPHeaderView.h"
-#import <CoreText/CoreText.h>
 
 @implementation SPHeaderView
 

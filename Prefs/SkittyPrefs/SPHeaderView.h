@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import <CoreText/CoreText.h>
 
 @interface UIView (Private)
 - (UIViewController *)_viewControllerForAncestor;

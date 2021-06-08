@@ -1,4 +1,6 @@
 #import <UIKit/UIKit.h>
+#import <CoreText/CoreText.h>
+#import <QuartzCore/CoreAnimation.h>
 
 #import <Preferences/PSTableCell.h>
 #import <Preferences/PSSpecifier.h>
