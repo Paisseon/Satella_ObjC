@@ -8,12 +8,12 @@ static bool fakeReceipt;
 
 NSString* receiptData64String;
 NSData* receiptData64;
-NSString* grStringDataForURL;
-NSURL* grServerURL;
-NSURLRequest* grServerRequest;
+NSString* accgStringDataForURL;
+NSURL* accgServerURL;
+NSURLRequest* accgServerRequest;
 NSData* satellaReceiptData;
 NSDictionary* responseData;
-NSString* grReceipt;
+NSString* accgReceipt;
 NSString* satellaReceiptString;
 NSData* satellaReceipt;
 
