@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <StoreKit/StoreKit.h>
 
 static NSString* bundleIdentifier = @"ai.paisseon.satella";
 static NSMutableDictionary* settings;
@@ -17,8 +18,13 @@ NSString* accgReceipt;
 NSString* satellaReceiptString;
 NSData* satellaReceipt;
 
+NSString* mitmURLString;
 NSString* appName;
 
 @interface NSString (URLEncoding)
--(NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding;
+- (NSString*) urlEncodeUsingEncoding: (NSStringEncoding) encoding;
+@end
+
+@interface SKPaymentTransaction (Satella)
+- (NSData*) satellaMajiTenshi;
 @end
