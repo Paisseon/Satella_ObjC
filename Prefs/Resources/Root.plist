@@ -9,7 +9,7 @@
 	<key>headerColor</key>
 	<string>#000000</string>
 	<key>headerFontPath</key>
-	<string>/Library/Application Support/Pokebox/silkscreen.ttf</string>
+	<string>/Library/Application Support/Satella/silkscreen.ttf</string>
 	<key>items</key>
 	<array>
 		<dict>
@@ -38,7 +38,21 @@
 			<key>key</key>
 			<string>fakeReceipt</string>
 			<key>label</key>
-			<string>Fake Receipt 🧪</string>
+			<string>Fake Receipts 🧪</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>ai.paisseon.satella.prefschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>ai.paisseon.satella</string>
+			<key>key</key>
+			<string>enableAll</string>
+			<key>label</key>
+			<string>Enable in All Apps</string>
 		</dict>
 		<dict>
 			<key>PostNotification</key>

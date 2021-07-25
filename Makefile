@@ -1,15 +1,15 @@
+SYSROOT = $(THEOS)/sdks/iPhoneOS14.4.sdk/
 ARCHS = arm64 arm64e
-TARGET = iphone:clang:latest:13.0
-SYSROOT = $(THEOS)/sdks/iPhoneOS13.3.sdk/
+TARGET = iphone:clang:14.4:13.0
 
-FINAL_RELEASE = 1
+FINALPACKAGE = 1
 DEBUG = 0
 
 INSTALL_TARGET_PROCESSES = SpringBoard
 TWEAK_NAME = Satella
-Satella_FILES = Satella.x
-Satella_CFLAGS = -fobjc-arc -Wno-error=deprecated-declarations
-Satella_EXTRA_FRAMEWORKS = AltList UIKit
+$(TWEAK_NAME)_FILES = $(TWEAK_NAME).x
+$(TWEAK_NAME)_CFLAGS = -fobjc-arc -Wno-error=deprecated-declarations
+$(TWEAK_NAME)_EXTRA_FRAMEWORKS = AltList UIKit
 
 SUBPROJECTS += Prefs
 

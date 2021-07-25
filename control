@@ -3,7 +3,7 @@ Name: Satella
 Author: paisseon
 Description: Aishiteru
 Maintainer: paisseon
-Version: 2.2
+Version: 2.4
 Depends: firmware (>= 12.0), mobilesubstrate, preferenceloader, com.opa334.altlist
 Architecture: iphoneos-arm
 Icon: https://i.imgur.com/HHOvZoD.png
