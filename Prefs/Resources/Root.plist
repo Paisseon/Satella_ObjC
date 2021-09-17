@@ -3,13 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>darkHeaderColor</key>
-	<string>#ffffff</string>
+	<string>#000000</string>
 	<key>darkTextColor</key>
 	<string>#000000</string>
 	<key>headerColor</key>
 	<string>#000000</string>
-	<key>headerFontPath</key>
-	<string>/Library/Application Support/Satella/silkscreen.ttf</string>
 	<key>items</key>
 	<array>
 		<dict>
@@ -38,7 +36,7 @@
 			<key>key</key>
 			<string>fakeReceipt</string>
 			<key>label</key>
-			<string>Fake Receipts 🧪</string>
+			<string>Fake Receipt 🧪</string>
 		</dict>
 		<dict>
 			<key>PostNotification</key>
@@ -123,7 +121,7 @@ Therein lies your sin.</string>
 	<key>name</key>
 	<string>Satella</string>
 	<key>subtitle</key>
-	<string>Modern IAP hacker</string>
+	<string>v2.5.0</string>
 	<key>textColor</key>
 	<string>#ffffff</string>
 </dict>
