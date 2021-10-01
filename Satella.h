@@ -1,5 +1,4 @@
 #import <Foundation/Foundation.h>
-#import <dlfcn.h>
 
 static NSString* bundleIdentifier = @"ai.paisseon.satella";
 static NSMutableDictionary* settings;

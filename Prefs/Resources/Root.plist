@@ -36,7 +36,7 @@
 			<key>key</key>
 			<string>fakeReceipt</string>
 			<key>label</key>
-			<string>Fake Receipt 🧪</string>
+			<string>Fake Receipt (iOS 13) 🧪</string>
 		</dict>
 		<dict>
 			<key>PostNotification</key>
@@ -121,7 +121,7 @@ Therein lies your sin.</string>
 	<key>name</key>
 	<string>Satella</string>
 	<key>subtitle</key>
-	<string>v2.5.0</string>
+	<string>v2.5.1</string>
 	<key>textColor</key>
 	<string>#ffffff</string>
 </dict>

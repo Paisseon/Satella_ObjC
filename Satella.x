@@ -22,6 +22,7 @@ static bool enabledInApp (NSString* appName) { // this uses altlist to see what 
 	return [altlistPrefs[@"apps"] containsObject:appName]; // returns true if app is whitelisted
 }
 
+%group Main
 %hook SKPaymentTransaction
 - (long long) transactionState {
 	return 1; // this sets transactionState to SKPaymentTransactionStatePurchased
@@ -30,21 +31,23 @@ static bool enabledInApp (NSString* appName) { // this uses altlist to see what 
 - (void) _setTransactionState: (long long) arg1 {
 	%orig(1); // iOS 14 compatibility
 }
-
-- (NSData*) transactionReceipt {
-	if (fakeReceipt) return [[NSData alloc] initWithBase64EncodedString:satellaReceipt options:0];
-	return %orig;
-}
-
-- (void) _setTransactionReceipt: (id) arg1 {
-	if (fakeReceipt) arg1 = [[NSData alloc] initWithBase64EncodedString:satellaReceipt options:0];
-	%orig;
-}
 %end
 
 %hook SKPaymentQueue
 + (bool) canMakePayments {
 	return true; // allow restricted users to fake purchase
+}
+%end
+%end
+
+%group Receipts
+%hook SKPaymentTransaction
+- (NSData*) transactionReceipt {
+	return [[NSData alloc] initWithBase64EncodedString:satellaReceipt options:0]; // this creates a fake receipt data (iOS 13 only!)
+}
+
+- (void) _setTransactionReceipt: (id) arg1 {
+	%orig([[NSData alloc] initWithBase64EncodedString:satellaReceipt options:0]);
 }
 %end
 
@@ -57,10 +60,14 @@ static bool enabledInApp (NSString* appName) { // this uses altlist to see what 
 	return false; // make the receipt not expired
 }
 %end
+%end
 
 %ctor {
 	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback) PreferencesChangedCallback, (CFStringRef)[NSString stringWithFormat:@"%@.prefschanged", bundleIdentifier], NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
 	refreshPrefs();
 	NSString* appName = [[NSBundle mainBundle] bundleIdentifier];
-	if ((enabled && enabledInApp(appName)) || (enableAll && ![appName isEqualToString:@"com.apple.backboardd"])) %init;
+	if ((enabled && enabledInApp(appName)) || (enableAll && ![appName containsString:@"com.apple."])) {
+		%init(Main);
+		if (fakeReceipt) %init(Receipts);
+	}
 }
