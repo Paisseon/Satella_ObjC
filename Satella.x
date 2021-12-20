@@ -102,6 +102,26 @@ static void setSatellaReceipt() {
 - (void) _setError: (NSError*) arg0 {
 	%orig(nil); // ignore pesky errors, we don't care about analytics
 }
+
+// start crash fixing section
+
+- (NSString*) matchingIdentifier {
+	return [NSString stringWithFormat:@"satella-mId-%u", arc4random_uniform(23092029)]; // uses arc4random so that apps don't think it's all the same transaction
+}
+
+- (NSString*) transactionIdentifier {
+	return [NSString stringWithFormat:@"satella-tId-%u", arc4random_uniform(23092029)];
+}
+
+- (NSString*) _transactionIdentifier {
+	return [NSString stringWithFormat:@"satella-_tId-%u", arc4random_uniform(23092029)];
+}
+
+- (void) _setTransactionIdentifier: (NSString*) arg0 {
+	%orig([NSString stringWithFormat:@"satella-_tId-%u", arc4random_uniform(23092029)]);
+}
+
+// end crash fixing section
 %end
 
 %hook SKPaymentQueue
