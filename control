@@ -3,7 +3,7 @@ Name: Satella
 Author: Paisseon
 Description: IAP cracker for modern devices
 Maintainer: Paisseon
-Version: 2.7
+Version: 2.8
 Depends: firmware (>= 13.0), mobilesubstrate, preferenceloader, com.opa334.altlist
 Architecture: iphoneos-arm
 Icon: https://paisseon.github.io/info/satella.png

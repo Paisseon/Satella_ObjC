@@ -1,4 +1,5 @@
 #import <StoreKit/StoreKit.h>
+#import <time.h>
 
 static NSString* bundleIdentifier = @"ai.paisseon.satella";
 static NSMutableDictionary* settings;
@@ -8,10 +9,8 @@ static bool enableObserver;
 static bool enableBypass;
 static bool enableAll;
 
-static NSData* satellaReceipt;
-
 @interface SKPaymentTransaction (Satella)
-- (void) _setTransactionState: (long long) arg0;
+- (void) _setTransactionState: (char) arg0;
 - (void) _setError: (NSError*) arg0;
 @end
 
